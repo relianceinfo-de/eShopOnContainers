@@ -61,12 +61,24 @@ public class DefaultRabbitMQPersistentConnection
                 {
                     _logger.LogWarning(ex, "RabbitMQ Client could not connect after {TimeOut}s", $"{time.TotalSeconds:n1}");
                 }
-            );
+            ); // DefaultRabbitMQPersistentConnection
+
 
             policy.Execute(() =>
             {
+                
+               // _connectionFactory.Uri =  new Uri("amqp://guest:guest@localhost:5672/");
+                
+               // _connectionFactory.D = false;
+              // _connectionFactory. ConsumerDispatchConcurrency = 1;
+
+                _logger.LogInformation("Hey I am here");
+
+
                 _connection = _connectionFactory
                         .CreateConnection();
+
+
             });
 
             if (IsConnected)

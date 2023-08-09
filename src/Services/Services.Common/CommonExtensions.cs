@@ -396,7 +396,7 @@ public static class CommonExtensions
 
                 var factory = new ConnectionFactory()
                 {
-                    HostName = configuration.GetRequiredConnectionString("EventBus"),
+                    HostName = "localhost", //configuration.GetRequiredConnectionString("EventBus"),
                     DispatchConsumersAsync = true
                 };
 
